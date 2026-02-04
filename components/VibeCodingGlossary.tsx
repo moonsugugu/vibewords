@@ -39,7 +39,7 @@ const UI_TEXT: Record<string, any> = {
   ko: {
     title: "바이브코딩 용어 사전",
     subtitle: "made by 뭉슈쌤",
-    searchPlaceholder: "용어 검색 (예: API, 훅, 컴포넌트...)",
+    searchPlaceholder: "용어 검색 (예: API,훅, 컴포넌트...)",
     total: "총",
     countUnit: "개",
     all: "전체",
