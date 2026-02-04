@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { 
   Search, X, Copy, Check, ExternalLink, 
@@ -39,7 +38,7 @@ const UI_TEXT: Record<string, any> = {
   ko: {
     title: "바이브코딩 용어 사전",
     subtitle: "made by 뭉슈쌤",
-    searchPlaceholder: "용어 검색 (예: API,훅, 컴포넌트...)",
+    searchPlaceholder: "용어 검색 (예: API, 훅, 컴포넌트...)",
     total: "총",
     countUnit: "개",
     all: "전체",
@@ -165,7 +164,7 @@ const ParticleBackground: React.FC = () => {
   );
 };
 
-// --- 데이터: 200개 용어 전체 리스트 ---
+// --- 데이터: 200개 용어 전체 리스트 (Updated with Provided Text) ---
 const TERMS_DATA: Term[] = [
   // 1. 구조 및 레이아웃 (Structure & Layout)
   { id: 1, category: '구조/레이아웃', termKr: '내비게이션 바', termEn: 'Navbar / GNB', summary: '상단 고정 메인 메뉴.', detail: '웹사이트 최상단에 고정되어 로고, 메뉴, 로그인 버튼 등을 포함하는 나침반 역할을 합니다. 사용자가 어디에 있든 항상 접근할 수 있어야 하며, 사이트의 전체 구조를 한눈에 파악하게 해줍니다.', promptKr: '상단에 로고와 주요 메뉴가 포함된 고정된 내비게이션 바를 만들어줘.', promptEn: 'Create a sticky Navbar at the top with a logo and menu items.', related: [2, 5] },
@@ -709,7 +708,7 @@ export const VibeCodingGlossary: React.FC = () => {
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-indigo-100 pb-20">
       
       {/* --- Background Audio --- */}
-      <audio ref={audioRef} src="https://raw.githubusercontent.com/moonsugugu/ugs//main/code.mp3" loop />
+      <audio ref={audioRef} src="https://raw.githubusercontent.com/moonsugugu/ugs/main/code.mp3" loop />
 
       {/* --- Intro Overlay --- */}
       {showIntro && (
@@ -1022,44 +1021,4 @@ export const VibeCodingGlossary: React.FC = () => {
                   <div className="relative group">
                     <div className="flex items-center justify-between mb-2">
                       <label className="text-xs font-bold text-slate-500 uppercase flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-violet-500"></span>
-                        {t.modal.promptEn}
-                      </label>
-                      <button 
-                        onClick={() => handleCopy(selectedTerm.promptEn, 'en')}
-                        className="text-xs flex items-center gap-1 text-slate-400 hover:text-violet-600 transition-colors font-medium"
-                      >
-                        {copied === 'en' ? <Check size={12} /> : <Copy size={12} />}
-                        {copied === 'en' ? 'Copied!' : 'Copy'}
-                      </button>
-                    </div>
-                    <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 font-mono text-sm text-slate-700 leading-relaxed group-hover:border-violet-200 transition-colors relative overflow-hidden">
-                       {selectedTerm.promptEn}
-                       <div className="absolute inset-0 bg-violet-50 opacity-0 group-hover:opacity-10 transition-opacity pointer-events-none"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="p-4 border-t border-slate-100 bg-slate-50/50 flex justify-end shrink-0">
-                 <button 
-                   onClick={() => setSelectedTerm(null)}
-                   className="px-5 py-2.5 bg-slate-900 text-white text-sm font-bold rounded-xl shadow-lg hover:bg-slate-800 hover:shadow-xl transition-all active:scale-95"
-                 >
-                   Close
-                 </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* --- Footer --- */}
-      <footer className="mt-20 py-8 text-center text-slate-400 text-xs font-medium border-t border-slate-100">
-        <p className="mb-2">VibeCoding Glossary © {new Date().getFullYear()}</p>
-        <p className="opacity-70">Designed for Developers & Designers</p>
-      </footer>
-
-    </div>
-  );
-};
+                        <span className="w-2 h-2 rounded-full bg-violet
